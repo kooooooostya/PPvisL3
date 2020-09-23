@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PPvisL3</string>
+    <string name="select_card">Select card</string>
+    <string name="enter_password">Enter password:</string>
+    <string name="confirm">Confirm</string>
+    <string name="et_hint_write_password">write password here</string>
+</resources>

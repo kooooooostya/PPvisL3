@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_text_fio">10sp</dimen>
+    <dimen name="text_size_card_numb">8sp</dimen>
+    <dimen name="card_size_width">130dp</dimen>
+    <dimen name="card_size_height">90dp</dimen>
+
+    <dimen name="text_size_large">48sp</dimen>
+</resources>

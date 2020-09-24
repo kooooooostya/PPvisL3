@@ -4,4 +4,9 @@
     <string name="enter_password">Enter password:</string>
     <string name="confirm">Confirm</string>
     <string name="et_hint_write_password">write password here</string>
+    <string name="et_hint_wrong_password">Password is wrong, try again</string>
+    <string name="bank_withdraw">Снять Наличные</string>
+    <string name="menu_check_money">Проверить остаток на счете</string>
+    <string name="menu_payments">Платежи</string>
+    <string name="menu_transfer">Перевод на другой счет</string>
 </resources>

@@ -6,4 +6,8 @@
     <dimen name="card_size_height">90dp</dimen>
 
     <dimen name="text_size_large">48sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+
+    <dimen name="menu_button_width">0dp</dimen>
+    <dimen name="menu_button_height">80dp</dimen>
 </resources>

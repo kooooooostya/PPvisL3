@@ -27,7 +27,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.2"
             app:layout_constraintTop_toTopOf="parent"
-            android:onClick="@{() -> viewModel.onFirstCardClick()}">
+            android:onClick="@{viewModel::onFirstCardClick}">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -78,12 +78,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.8"
             app:layout_constraintTop_toTopOf="parent"
-            android:onClick="@{() -> viewModel.onSecondCardClick()}">
+            android:onClick="@{viewModel::onSecondCardClick}">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_margin="6dp"
-                android:layout_height="match_parent">
+                android:layout_width="113dp"
+                android:layout_height="match_parent"
+                android:layout_margin="6dp">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -92,6 +93,7 @@
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
                 <TextView
                     android:id="@+id/start_card2_numb"
                     android:layout_width="wrap_content"
@@ -128,12 +130,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.7"
-            android:onClick="@{() -> viewModel.onThirdCardClick()}">
+            android:onClick="@{viewModel::onThirdCardClick}">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:onClick="@{() -> viewModel.onThirdCardClick()}"
                 android:layout_margin="6dp">
 
                 <TextView

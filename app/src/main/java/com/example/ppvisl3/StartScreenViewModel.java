@@ -1,12 +1,15 @@
 package com.example.ppvisl3;
 import android.content.Intent;
+import android.view.View;
 
 import com.example.ppvisl3.Services.Model.CardNumber;
 import com.example.ppvisl3.Services.Model.DebitCard;
 import com.example.ppvisl3.Services.Model.Money;
+import com.example.ppvisl3.View.VerifyPasswordActivity;
 
 public class StartScreenViewModel {
 
+    public static final String DEBIT_CARD_INTENT_EXTRA = "CARD_EXTRA";
     DebitCard mDebitCard1;
     DebitCard mDebitCard2;
     DebitCard mDebitCard3;
@@ -32,13 +35,20 @@ public class StartScreenViewModel {
         return mDebitCard3.getCardNumber().toString();
     }
 
-    public void onFirstCardClick(){
-        Intent intent = new Intent();
+    public void onFirstCardClick(View view){
+        Intent intent = new Intent(view.getContext(), VerifyPasswordActivity.class);
+        intent.putExtra(DEBIT_CARD_INTENT_EXTRA, mDebitCard1);
+        view.getContext().startActivity(intent);
+
     }
-    public void onSecondCardClick(){
-        Intent intent = new Intent();
+    public void onSecondCardClick(View view){
+        Intent intent = new Intent(view.getContext(), VerifyPasswordActivity.class);
+        intent.putExtra(DEBIT_CARD_INTENT_EXTRA, mDebitCard1);
+        view.getContext().startActivity(intent);
     }
-    public void onThirdCardClick(){
-        Intent intent = new Intent();
+    public void onThirdCardClick(View view){
+        Intent intent = new Intent(view.getContext(), VerifyPasswordActivity.class);
+        intent.putExtra(DEBIT_CARD_INTENT_EXTRA, mDebitCard1);
+        view.getContext().startActivity(intent);
     }
 }

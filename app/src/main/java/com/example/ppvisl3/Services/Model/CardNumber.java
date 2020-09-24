@@ -6,7 +6,10 @@ public class CardNumber {
 
     public CardNumber() {
         mCardNumber = sLastCardNumber++;
-        sLastCardNumber++;
+    }
+
+    public CardNumber(long cardNumber) {
+        mCardNumber = cardNumber;
     }
 
     public long getCardNumber() {

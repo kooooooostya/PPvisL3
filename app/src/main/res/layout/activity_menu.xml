@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.ppvisl3.MenuViewModel" />
+    </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
         tools:context=".View.MenuActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_choose_operation"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_size_xm"
+            app:layout_constraintBottom_toTopOf="@+id/button_withdraw"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/button_withdraw"
@@ -17,6 +33,7 @@
             android:layout_marginStart="4dp"
             android:text="@string/bank_withdraw"
             android:textSize="@dimen/text_size_medium"
+            android:onClick="@{viewModel::onWithdrawClick}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -29,6 +46,7 @@
             android:layout_height="@dimen/menu_button_height"
             android:text="@string/menu_check_money"
             android:textSize="@dimen/text_size_medium"
+            android:onClick="@{viewModel::onCheckClick}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -41,25 +59,28 @@
             android:layout_width="@dimen/menu_button_width"
             android:layout_height="@dimen/menu_button_height"
             android:layout_marginStart="4dp"
+            android:onClick="@{viewModel::onPaymentClick}"
             android:text="@string/menu_payments"
             android:textSize="@dimen/text_size_medium"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/button_withdraw"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.437" />
+            app:layout_constraintTop_toBottomOf="@+id/button_withdraw"
+            app:layout_constraintVertical_bias="0.0" />
 
         <Button
             android:id="@+id/button_transfer"
             android:layout_width="@dimen/menu_button_width"
             android:layout_height="@dimen/menu_button_height"
+            android:onClick="@{viewModel::onTransferClick}"
             android:text="@string/menu_transfer"
             android:textSize="@dimen/text_size_medium"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/button_payments"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.437" />
+            app:layout_constraintTop_toBottomOf="@+id/button_check"
+            app:layout_constraintVertical_bias="0.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

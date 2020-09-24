@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.ppvisl3.WithdrawViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="12dp"
+        tools:context=".View.WithdrawActivity">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="@string/withdraw_amount"
+            android:textSize="@dimen/text_size_xm"
+            app:layout_constraintBottom_toTopOf="@+id/button5p"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.681" />
+
+        <Button
+            android:id="@+id/button5p"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{viewModel::onClick}"
+            android:text="5p"
+            android:textSize="@dimen/text_size_xm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button50p"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.428" />
+
+        <Button
+            android:id="@+id/button10p"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="10p"
+            android:onClick="@{viewModel::onClick}"
+            android:textSize="@dimen/text_size_xm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.55" />
+
+        <Button
+            android:id="@+id/button20p"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{viewModel::onClick}"
+            android:text="20p"
+            android:textSize="@dimen/text_size_xm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button500p"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.67" />
+
+        <Button
+            android:id="@+id/button50p"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="50p"
+            android:onClick="@{viewModel::onClick}"
+            android:textSize="@dimen/text_size_xm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.429" />
+
+        <Button
+            android:id="@+id/button100p"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{viewModel::onClick}"
+            android:text="100p"
+            android:textSize="@dimen/text_size_xm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button10p"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.55" />
+
+        <Button
+            android:id="@+id/button500p"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="500p"
+            android:onClick="@{viewModel::onClick}"
+            android:textSize="@dimen/text_size_xm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.67" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

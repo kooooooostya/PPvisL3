@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.example.ppvisl3.MenuViewModel;
 import com.example.ppvisl3.R;
 import com.example.ppvisl3.Services.Model.DebitCard;
 import com.example.ppvisl3.StartScreenViewModel;
@@ -25,8 +26,9 @@ public class VerifyPasswordActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (mDebitCard.checkPassword(binding.verifyPasswordEt.getText().toString())){
-                    Intent intent;
-                    //TODO Перезод к меню выбора действий
+                    Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+                    intent.putExtra(MenuViewModel.DEBIT_CARD_INTENT_EXTRA, mDebitCard);
+                    startActivity(intent);
                 }
                 else {
                     binding.verifyPasswordEt.setText("");

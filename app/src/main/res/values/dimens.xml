@@ -10,4 +10,5 @@
 
     <dimen name="menu_button_width">0dp</dimen>
     <dimen name="menu_button_height">80dp</dimen>
+    <dimen name="text_size_xm">36sp</dimen>
 </resources>

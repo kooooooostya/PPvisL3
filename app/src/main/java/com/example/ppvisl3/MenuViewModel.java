@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.view.View;
 
 import com.example.ppvisl3.Services.Model.DebitCard;
+import com.example.ppvisl3.View.WithdrawActivity;
 
 public class MenuViewModel {
 
+    public static final String DEBIT_CARD_INTENT_EXTRA = "CARD_EXTRA";
     private DebitCard mDebitCard;
 
     public MenuViewModel(DebitCard debitCard) {
@@ -14,7 +16,25 @@ public class MenuViewModel {
     }
 
     public void onWithdrawClick(View view){
+        Intent intent = new Intent(view.getContext(), WithdrawActivity.class);
+        intent.putExtra(DEBIT_CARD_INTENT_EXTRA, mDebitCard);
+        view.getContext().startActivity(intent);
+    }
+
+    public void onCheckClick(View view){
         Intent intent = new Intent();
-        //TODO 
+        //TODO
+    }
+
+    public void onPaymentClick(View view){
+        Intent intent = new Intent();
+        intent.putExtra(DEBIT_CARD_INTENT_EXTRA, mDebitCard);
+        //TODO
+    }
+
+    public void onTransferClick(View view){
+        Intent intent = new Intent();
+        intent.putExtra(DEBIT_CARD_INTENT_EXTRA, mDebitCard);
+        //TODO
     }
 }

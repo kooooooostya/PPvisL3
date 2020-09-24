@@ -55,6 +55,13 @@ public class Money {
         this.mValue *= newRate;
     }
 
+    public void addToTheAccount(double value, String currency){
+        String oldCurrency = this.mCurrency;
+        this.transferToAnotherCurrency(currency);
+        this.setValue(this.getValue() + value);
+        this.transferToAnotherCurrency(oldCurrency);
+    }
+
     public void addToTheAccount(double value){
         this.setValue(this.getValue() + value);
     }

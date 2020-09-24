@@ -9,4 +9,6 @@
     <string name="menu_check_money">Проверить остаток на счете</string>
     <string name="menu_payments">Платежи</string>
     <string name="menu_transfer">Перевод на другой счет</string>
+    <string name="withdraw_amount">Выберите количество:</string>
+    <string name="menu_choose_operation">Выберите операцию</string>
 </resources>

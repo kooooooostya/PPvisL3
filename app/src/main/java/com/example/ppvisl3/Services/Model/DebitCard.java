@@ -25,11 +25,11 @@ public class DebitCard implements Parcelable {
     }
 
     //returns money if password correct, else returns null
-    public Money getMoneyOrNullIfWrongPassword(int password) {
-        if (checkPassword(password)) return mMoney;
-        else return null;
+    public Money getMoney() {
+        return mMoney;
     }
 
+    //adds money to the card
     public void putMoneyToCard(Money money){
         switch (this.mMoney.getCurrency()) {
             case Money.USD:
@@ -45,19 +45,17 @@ public class DebitCard implements Parcelable {
         this.mMoney.addToTheAccount(money.getValue());
     }
 
-    public Money withdrawMoneyOrNull(int password, double value){
-        if (checkPassword(password)){
-            if(this.mMoney.getValue() >= value){
-                this.mMoney.addToTheAccount(-value);
-                return new Money(this.mMoney.getCurrency(), value);
-            }else {
-                return null;
-            }
-
+    //returns money if there is more money on the card than is needed for withdrawal
+    public Money withdrawMoneyOrNull(double value, String currency){
+        if (this.mMoney.getValue() >= value) {
+            this.mMoney.addToTheAccount(-value, currency);
+            return new Money(this.mMoney.getCurrency(), value);
+        } else {
+            return null;
         }
-        return null;
     }
 
+    //checks password
     public boolean checkPassword(int password){
         return this.mPassword == password;
     }
@@ -70,12 +68,14 @@ public class DebitCard implements Parcelable {
         return 0;
     }
 
+    //This needed to write DebitCard to parcelable to transfer to the Activity
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeStringArray(new String[]{this.getCardNumber().toString(), String.valueOf(this.mPassword),
                 this.mMoney.getCurrency(), String.valueOf(this.mMoney.getValue())});
     }
 
+    //Creates DebitCard from parcelable
     public static final  Parcelable.Creator<DebitCard> CREATOR = new Parcelable.Creator<DebitCard>(){
 
         @Override

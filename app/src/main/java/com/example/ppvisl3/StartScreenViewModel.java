@@ -43,12 +43,12 @@ public class StartScreenViewModel {
     }
     public void onSecondCardClick(View view){
         Intent intent = new Intent(view.getContext(), VerifyPasswordActivity.class);
-        intent.putExtra(DEBIT_CARD_INTENT_EXTRA, mDebitCard1);
+        intent.putExtra(DEBIT_CARD_INTENT_EXTRA, mDebitCard2);
         view.getContext().startActivity(intent);
     }
     public void onThirdCardClick(View view){
         Intent intent = new Intent(view.getContext(), VerifyPasswordActivity.class);
-        intent.putExtra(DEBIT_CARD_INTENT_EXTRA, mDebitCard1);
+        intent.putExtra(DEBIT_CARD_INTENT_EXTRA, mDebitCard3);
         view.getContext().startActivity(intent);
     }
 }

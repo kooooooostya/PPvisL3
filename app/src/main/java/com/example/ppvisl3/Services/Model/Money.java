@@ -1,6 +1,8 @@
 package com.example.ppvisl3.Services.Model;
 
 
+import java.util.Locale;
+
 //The following class introduce money in one of three constant rates
 public class Money {
     public static final String USD = "usd";
@@ -22,7 +24,7 @@ public class Money {
     }
 
     //transfer money from one currency to another, if newCurrency value incorrect throw NPE
-    private void transferToAnotherCurrency(String newCurrency){
+    public void transferToAnotherCurrency(String newCurrency){
         double newRate, oldRate;
         switch (this.getCurrency()){
             case USD:
@@ -89,5 +91,10 @@ public class Money {
 
     public double getValue() {
         return mValue;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(Locale.getDefault(),"%.3f", mValue) + mCurrency;
     }
 }

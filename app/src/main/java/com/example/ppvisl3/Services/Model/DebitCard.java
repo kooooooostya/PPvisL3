@@ -47,8 +47,10 @@ public class DebitCard implements Parcelable {
 
     //returns money if there is more money on the card than is needed for withdrawal
     public Money withdrawMoneyOrNull(double value, String currency){
-        if (this.mMoney.getValue() >= value) {
-            this.mMoney.addToTheAccount(-value, currency);
+        Money money = new Money(currency, value);
+        money.transferToAnotherCurrency(this.mMoney.getCurrency());
+        if (this.mMoney.getValue() >= money.getValue()) {
+            this.mMoney.addToTheAccount(-money.getValue(), money.getCurrency());
             return new Money(this.mMoney.getCurrency(), value);
         } else {
             return null;

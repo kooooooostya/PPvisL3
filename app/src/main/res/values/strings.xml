@@ -5,10 +5,14 @@
     <string name="confirm">Confirm</string>
     <string name="et_hint_write_password">write password here</string>
     <string name="et_hint_wrong_password">Password is wrong, try again</string>
+
     <string name="bank_withdraw">Снять Наличные</string>
     <string name="menu_check_money">Проверить остаток на счете</string>
     <string name="menu_payments">Платежи</string>
     <string name="menu_transfer">Перевод на другой счет</string>
+
     <string name="withdraw_amount">Выберите количество:</string>
+
     <string name="menu_choose_operation">Выберите операцию</string>
+    <string name="check_balance">Остаток на счете</string>
 </resources>

@@ -17,6 +17,7 @@ public class TransferActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         StartScreenBinding binding = DataBindingUtil.setContentView(this, R.layout.start_screen);
-        binding.setViewModel(new TransferViewModel((DebitCard)getIntent().getParcelableExtra(StartScreenViewModel.DEBIT_CARD_INTENT_EXTRA)));
+        binding.setViewModel(new TransferViewModel(getApplicationContext(),
+                (DebitCard)getIntent().getParcelableExtra(StartScreenViewModel.DEBIT_CARD_INTENT_EXTRA)));
     }
 }

@@ -29,6 +29,10 @@ public class DebitCard implements Parcelable {
         return mMoney;
     }
 
+    public void setMoney(Money money) {
+        mMoney = money;
+    }
+
     //adds money to the card
     public void putMoneyToCard(Money money){
         switch (this.mMoney.getCurrency()) {
@@ -51,7 +55,7 @@ public class DebitCard implements Parcelable {
         money.transferToAnotherCurrency(this.mMoney.getCurrency());
         if (this.mMoney.getValue() >= money.getValue()) {
             this.mMoney.addToTheAccount(-money.getValue(), money.getCurrency());
-            return new Money(this.mMoney.getCurrency(), value);
+            return money;
         } else {
             return null;
         }

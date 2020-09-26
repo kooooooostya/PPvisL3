@@ -1,5 +1,6 @@
 package com.example.ppvisl3;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 
@@ -11,7 +12,8 @@ public class TransferViewModel extends StartScreenViewModel {
     private DebitCard mDebitCard;
     public static final String EXTRA_DEBIT_CARD_INTENT_EXTRA = "CARD_EXTRA_EXTRA";
 
-    public TransferViewModel(DebitCard debitCard) {
+    public TransferViewModel(Context context, DebitCard debitCard) {
+        super(context);
         mDebitCard = debitCard;
     }
 
@@ -22,15 +24,15 @@ public class TransferViewModel extends StartScreenViewModel {
         switch (view.getId()) {
             case R.id.start_card_view_1:
                 intent.putExtra(DEBIT_CARD_INTENT_EXTRA, mDebitCard);
-                intent.putExtra(EXTRA_DEBIT_CARD_INTENT_EXTRA, mDebitCard1);
+                intent.putExtra(EXTRA_DEBIT_CARD_INTENT_EXTRA, updateAndGetDebitCard1(view.getContext()));
                 break;
             case R.id.start_card_view_2:
                 intent.putExtra(DEBIT_CARD_INTENT_EXTRA, mDebitCard);
-                intent.putExtra(EXTRA_DEBIT_CARD_INTENT_EXTRA, mDebitCard2);
+                intent.putExtra(EXTRA_DEBIT_CARD_INTENT_EXTRA, updateAndGetDebitCard2(view.getContext()));
                 break;
             case R.id.start_card_view_3:
                 intent.putExtra(DEBIT_CARD_INTENT_EXTRA, mDebitCard);
-                intent.putExtra(EXTRA_DEBIT_CARD_INTENT_EXTRA, mDebitCard3);
+                intent.putExtra(EXTRA_DEBIT_CARD_INTENT_EXTRA, updateAndGetDebitCard3(view.getContext()));
                 break;
         }
         view.getContext().startActivity(intent);

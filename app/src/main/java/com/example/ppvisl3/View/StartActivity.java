@@ -15,6 +15,6 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         StartScreenBinding binding = DataBindingUtil.setContentView(this, R.layout.start_screen);
-        binding.setViewModel(new StartScreenViewModel());
+        binding.setViewModel(new StartScreenViewModel(getApplicationContext()));
     }
 }

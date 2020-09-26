@@ -1,7 +1,8 @@
 package com.example.ppvisl3;
 
-import com.company.Money;
-import com.company.Rate;
+import com.example.ppvisl3.Services.Model.Money;
+import com.example.ppvisl3.Services.Model.Rate;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

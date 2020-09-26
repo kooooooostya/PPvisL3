@@ -1,7 +1,9 @@
 package com.example.ppvisl3;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.View;
 import android.widget.Toast;
 
@@ -21,6 +23,20 @@ public class WithdrawViewModel {
     }
 
     public void onClick(View view){
+        SharedPreferences.Editor editor = view.getContext().getSharedPreferences(
+                StartScreenViewModel.SHARED_PREFERENCES, Context.MODE_PRIVATE).edit();
+        String pathInSharedPreferences = "";
+        switch (mDebitCard.getMoney().getCurrency()){
+            case Money.USD:
+                pathInSharedPreferences = StartScreenViewModel.SP_CARD1_VALUE;
+                break;
+            case Money.BY:
+                pathInSharedPreferences = StartScreenViewModel.SP_CARD2_VALUE;
+                break;
+            case Money.RUB:
+                pathInSharedPreferences = StartScreenViewModel.SP_CARD3_VALUE;
+                break;
+        }
         Money money;
         switch (view.getId()){
             case R.id.button5p:
@@ -47,7 +63,11 @@ public class WithdrawViewModel {
         }
         if(money == null){
             Toast.makeText(view.getContext(), "На карте недостаточно средств", Toast.LENGTH_LONG).show();
-        }else Toast.makeText(view.getContext(), "Успех", Toast.LENGTH_LONG).show();
+        }else {
+            editor.putFloat(pathInSharedPreferences, (float)mDebitCard.getMoney().getValue());
+            editor.apply();
+            Toast.makeText(view.getContext(), "Успех", Toast.LENGTH_LONG).show();
+        }
         onCreateDialog(view);
     }
 

@@ -35,20 +35,19 @@ public class StartScreenViewModel {
         return mDebitCard3.getCardNumber().toString();
     }
 
-    public void onFirstCardClick(View view){
+    public void onCardClick(View view){
         Intent intent = new Intent(view.getContext(), VerifyPasswordActivity.class);
-        intent.putExtra(DEBIT_CARD_INTENT_EXTRA, mDebitCard1);
-        view.getContext().startActivity(intent);
-
-    }
-    public void onSecondCardClick(View view){
-        Intent intent = new Intent(view.getContext(), VerifyPasswordActivity.class);
-        intent.putExtra(DEBIT_CARD_INTENT_EXTRA, mDebitCard2);
-        view.getContext().startActivity(intent);
-    }
-    public void onThirdCardClick(View view){
-        Intent intent = new Intent(view.getContext(), VerifyPasswordActivity.class);
-        intent.putExtra(DEBIT_CARD_INTENT_EXTRA, mDebitCard3);
+        switch (view.getId()){
+            case R.id.start_card_view_1:
+                intent.putExtra(DEBIT_CARD_INTENT_EXTRA, mDebitCard1);
+                break;
+            case R.id.start_card_view_2:
+                intent.putExtra(DEBIT_CARD_INTENT_EXTRA, mDebitCard2);
+                break;
+            case R.id.start_card_view_3:
+                intent.putExtra(DEBIT_CARD_INTENT_EXTRA, mDebitCard3);
+                break;
+        }
         view.getContext().startActivity(intent);
     }
 }

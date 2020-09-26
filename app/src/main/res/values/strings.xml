@@ -15,4 +15,6 @@
 
     <string name="menu_choose_operation">Выберите операцию</string>
     <string name="check_balance">Остаток на счете</string>
+    <string name="card_usd">Card USD</string>
+    <string name="card_by">Card BY</string>
 </resources>

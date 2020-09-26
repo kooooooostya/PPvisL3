@@ -61,7 +61,7 @@ public class StartScreenViewModel {
 
     //returns mDebitCard1 and update value if it change
     public DebitCard updateAndGetDebitCard1(Context context) {
-        mDebitCard1 = new DebitCard(new CardNumber(), 1111, Money.USD);
+        mDebitCard1 = new DebitCard(new CardNumber(1000000000000000L), 1111, Money.USD);
         SharedPreferences sharedPreferences = context.getSharedPreferences(SHARED_PREFERENCES, Context.MODE_PRIVATE);
         float aFloat = sharedPreferences.getFloat(SP_CARD1_VALUE, -1);
         if(aFloat != -1) {
@@ -73,7 +73,7 @@ public class StartScreenViewModel {
     }
     //creates mDebitCard2 and update value of count Money if it change
     public DebitCard updateAndGetDebitCard2(Context context) {
-        mDebitCard2 = new DebitCard(new CardNumber(), 2222, Money.BY);
+        mDebitCard2 = new DebitCard(new CardNumber(1000000000000001L), 2222, Money.BY);
         SharedPreferences sharedPreferences = context.getSharedPreferences(SHARED_PREFERENCES, Context.MODE_PRIVATE);
         float aFloat = sharedPreferences.getFloat(SP_CARD2_VALUE, -1);
         if(aFloat != -1) {
@@ -84,7 +84,7 @@ public class StartScreenViewModel {
     }
     //returns mDebitCard3 and update value of count Money if it change
     public DebitCard updateAndGetDebitCard3(Context context) {
-        mDebitCard3 = new DebitCard(new CardNumber(), 3333, Money.RUB);
+        mDebitCard3 = new DebitCard(new CardNumber(1000000000000002L), 3333, Money.RUB);
         SharedPreferences sharedPreferences = context.getSharedPreferences(SHARED_PREFERENCES, Context.MODE_PRIVATE);
         float aFloat = sharedPreferences.getFloat(SP_CARD3_VALUE, -1);
         if(aFloat != -1) {

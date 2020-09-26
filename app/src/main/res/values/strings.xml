@@ -8,7 +8,7 @@
 
     <string name="bank_withdraw">Снять Наличные</string>
     <string name="menu_check_money">Проверить остаток на счете</string>
-    <string name="menu_payments">Платежи</string>
+    <string name="menu_put_money">Положить деньги на счет</string>
     <string name="menu_transfer">Перевод на другой счет</string>
 
     <string name="withdraw_amount">Выберите количество:</string>

@@ -14,7 +14,7 @@ import com.example.ppvisl3.View.VerifyPasswordActivity;
 
 public class WithdrawViewModel {
 
-    private DebitCard mDebitCard;
+    protected DebitCard mDebitCard;
 
     public WithdrawViewModel(DebitCard debitCard) {
         mDebitCard = debitCard;

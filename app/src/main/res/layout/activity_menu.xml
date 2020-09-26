@@ -55,12 +55,12 @@
             app:layout_constraintVertical_bias="0.299" />
 
         <Button
-            android:id="@+id/button_payments"
+            android:id="@+id/button_put_money"
             android:layout_width="@dimen/menu_button_width"
             android:layout_height="@dimen/menu_button_height"
             android:layout_marginStart="4dp"
-            android:onClick="@{viewModel::onPaymentClick}"
-            android:text="@string/menu_payments"
+            android:onClick="@{viewModel::onPutMoneyClick}"
+            android:text="@string/menu_put_money"
             android:textSize="@dimen/text_size_medium"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/button_withdraw"
@@ -78,7 +78,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/button_payments"
+            app:layout_constraintStart_toEndOf="@+id/button_put_money"
             app:layout_constraintTop_toBottomOf="@+id/button_check"
             app:layout_constraintVertical_bias="0.0" />
 

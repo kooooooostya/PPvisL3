@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.example.ppvisl3.Services.Model.DebitCard;
 import com.example.ppvisl3.View.CheckAccountBalanceActivity;
+import com.example.ppvisl3.View.PutMoneyActivity;
 import com.example.ppvisl3.View.WithdrawActivity;
 
 public class MenuViewModel {
@@ -28,10 +29,10 @@ public class MenuViewModel {
         view.getContext().startActivity(intent);
     }
 
-    public void onPaymentClick(View view){
-        Intent intent = new Intent();
+    public void onPutMoneyClick(View view){
+        Intent intent = new Intent(view.getContext(), PutMoneyActivity.class);
         intent.putExtra(DEBIT_CARD_INTENT_EXTRA, mDebitCard);
-        //TODO
+        view.getContext().startActivity(intent);
     }
 
     public void onTransferClick(View view){
